@@ -1,0 +1,112 @@
+{
+  "name": "installment-kit",
+  "version": "0.1.0",
+  "description": "Pure functions for enrollment billing in installments: split and rebalance payment plans, derive paid status, discounts, refunds and schedule clashes. Zero dependencies.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist-cjs/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/src/index.d.ts",
+        "default": "./dist/src/index.js"
+      },
+      "require": {
+        "types": "./dist-cjs/src/index.d.ts",
+        "default": "./dist-cjs/src/index.js"
+      }
+    },
+    "./installments": {
+      "import": {
+        "types": "./dist/src/installments.d.ts",
+        "default": "./dist/src/installments.js"
+      },
+      "require": {
+        "types": "./dist-cjs/src/installments.d.ts",
+        "default": "./dist-cjs/src/installments.js"
+      }
+    },
+    "./ledger": {
+      "import": {
+        "types": "./dist/src/ledger.d.ts",
+        "default": "./dist/src/ledger.js"
+      },
+      "require": {
+        "types": "./dist-cjs/src/ledger.d.ts",
+        "default": "./dist-cjs/src/ledger.js"
+      }
+    },
+    "./discounts": {
+      "import": {
+        "types": "./dist/src/discounts.d.ts",
+        "default": "./dist/src/discounts.js"
+      },
+      "require": {
+        "types": "./dist-cjs/src/discounts.d.ts",
+        "default": "./dist-cjs/src/discounts.js"
+      }
+    },
+    "./schedule": {
+      "import": {
+        "types": "./dist/src/schedule.d.ts",
+        "default": "./dist/src/schedule.js"
+      },
+      "require": {
+        "types": "./dist-cjs/src/schedule.d.ts",
+        "default": "./dist-cjs/src/schedule.js"
+      }
+    },
+    "./curp": {
+      "import": {
+        "types": "./dist/src/curp.d.ts",
+        "default": "./dist/src/curp.js"
+      },
+      "require": {
+        "types": "./dist-cjs/src/curp.d.ts",
+        "default": "./dist-cjs/src/curp.js"
+      }
+    }
+  },
+  "files": [
+    "dist/src",
+    "dist-cjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node -e \"require('fs').writeFileSync('dist-cjs/package.json','{\\\"type\\\":\\\"commonjs\\\"}')\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3"
+  },
+  "module": "./dist/src/index.js",
+  "author": "Aldahir Sánchez",
+  "keywords": [
+    "installments",
+    "payment-plan",
+    "enrollment",
+    "tuition",
+    "scholarship",
+    "refund",
+    "schedule-conflict",
+    "curp",
+    "zero-dependencies"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OWNER/installment-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OWNER/installment-kit/issues"
+  },
+  "homepage": "https://github.com/OWNER/installment-kit#readme",
+  "sideEffects": false
+}
