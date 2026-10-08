@@ -102,11 +102,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OWNER/installment-kit.git"
+    "url": "git+https://github.com/aldahiiir/installment-kit.git"
   },
   "bugs": {
-    "url": "https://github.com/OWNER/installment-kit/issues"
+    "url": "https://github.com/aldahiiir/installment-kit/issues"
   },
-  "homepage": "https://github.com/OWNER/installment-kit#readme",
+  "homepage": "https://github.com/aldahiiir/installment-kit#readme",
   "sideEffects": false
 }
